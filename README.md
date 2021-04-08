@@ -18,10 +18,7 @@ More features to come.
 ### Have a feature request? Please open an issue and mark it as enhancement.
 
 ## Reporting Issues
-If you have found a bug, please open an issue and describe the bug in as much detail as possible and include both the server log which can be found in:
-* Derail Valley Directory -> Mods -> DVMultiplayer -> Logs -> (Date) -> (Time).log
-
-And the player log, which can be found in:
+If you have found a bug, please open an issue and describe the bug in as much detail as possible and include the player log, which can be found in:
 * AppData -> LocalLow -> Altfuture -> Derail Valley -> Player.log
 
 ## Contributing
