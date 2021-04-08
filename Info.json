@@ -1,0 +1,10 @@
+{
+  "Id": "DVTrainOrder",
+  "DisplayName": "Derail Valley Job Car Order",
+  "Author": "Patrick van Halm",
+  "Version": "1.0.0",
+  "AssemblyName": "DVTrainOrder.dll",
+  "EntryMethod": "DVTrainOrder.Main.Load",
+  "HomePage": "",
+  "Repository": ""
+}
