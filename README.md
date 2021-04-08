@@ -8,7 +8,7 @@ DV Job Realism is a modification to allow multiplayer in Derail Valley.
 
 ## Installation
 
-Download the mod from [Nexus Mods](https://www.nexusmods.com/derailvalley/mods)
+Download the mod from [Nexus Mods](https://www.nexusmods.com/derailvalley/mods/295/)
 
 Install the mod with Unity Mod Manager.
 
