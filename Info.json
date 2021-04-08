@@ -1,10 +1,10 @@
 {
-  "Id": "DVTrainOrder",
-  "DisplayName": "Derail Valley Job Car Order",
+  "Id": "DVJobsRealism",
+  "DisplayName": "Derail Valley Job Realism",
   "Author": "Patrick van Halm",
   "Version": "1.0.0",
-  "AssemblyName": "DVTrainOrder.dll",
-  "EntryMethod": "DVTrainOrder.Main.Load",
+  "AssemblyName": "DVJobsRealism.dll",
+  "EntryMethod": "DVJobsRealism.Main.Load",
   "HomePage": "",
   "Repository": ""
 }
