@@ -5,6 +5,6 @@
   "Version": "1.0.0",
   "AssemblyName": "DVJobsRealism.dll",
   "EntryMethod": "DVJobsRealism.Main.Load",
-  "HomePage": "",
-  "Repository": ""
+  "HomePage": "https://www.nexusmods.com/derailvalley/mods/295",
+  "Repository": "https://raw.githubusercontent.com/Patrick-van-Halm/dv-jobs_realism-mod/main/repository.json"
 }
