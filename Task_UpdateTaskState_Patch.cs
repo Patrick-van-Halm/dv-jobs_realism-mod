@@ -21,6 +21,7 @@ namespace DVJobsRealism
 
         private static bool AreCarsInOrderAndCoupledTogetherForTransportTask(TransportTask task)
         {
+            //Debug.Log($"{task.destinationTrack.ID}: {task.cars.Count}");
             SingletonBehaviour<IdGenerator>.Instance.logicCarToTrainCar.TryGetValue(task.cars[0], out TrainCar trainCar);
             if (!trainCar)
             {
@@ -28,22 +29,38 @@ namespace DVJobsRealism
                 return true;
             }
 
-            if (trainCar.trainset.cars.Where(c => !c.IsLoco).Count() != task.cars.Count)
+            if (trainCar.trainset.cars.Where(c => !c.IsLoco).Count() < task.cars.Count)
                 return false;
 
-            bool outOfOrder = false;
-            for (int i = 0; i < trainCar.trainset.cars.Count; i++)
+            int startIndex = trainCar.trainset.cars.FindIndex(t => t.CarGUID == task.cars[0].carGuid);
+            //Debug.Log($"starting count at {startIndex}");
+            for (int i = 0; i < task.cars.Count; i++)
             {
-                TrainCar carInSet = trainCar.trainset.cars[i];
+                TrainCar carInSet = trainCar.trainset.cars[i + startIndex];
                 Car jobCar = task.cars[i];
-                if (jobCar.ID != carInSet.ID)
+                if (jobCar.carGuid != carInSet.CarGUID)
                 {
-                    outOfOrder = true;
-                    break;
+                    if(i == 0)
+                    {
+                        for (int j = 0; j < task.cars.Count; i++)
+                        {
+                            var reversedTrainset = trainCar.trainset.cars.ToList();
+                            reversedTrainset.Reverse();
+                            startIndex = trainCar.trainset.cars.FindIndex(t => t.CarGUID == task.cars[0].carGuid);
+                            carInSet = reversedTrainset[i + startIndex];
+                            jobCar = task.cars[i];
+                            if (jobCar.carGuid != carInSet.CarGUID)
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+
+                    return false;
                 }
             }
-
-            return outOfOrder;
+            return true;
         }
     }
 
