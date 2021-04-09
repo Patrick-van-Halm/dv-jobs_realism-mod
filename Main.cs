@@ -28,9 +28,23 @@ namespace DVJobsRealism
             try { settings = Settings.Load<Settings>(mod); } catch { }
             
             mod.OnToggle = OnToggle;
+            mod.OnGUI = OnGUI;
+            mod.OnSaveGUI = OnSaveGUI;
+#if DEBUG
             mod.OnUnload = Unload;
+#endif
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             return true;
+        }
+
+        static void OnGUI(UnityModManager.ModEntry modEntry)
+        {
+            settings.Draw(modEntry);
+        }
+
+        static void OnSaveGUI(UnityModManager.ModEntry modEntry)
+        {
+            settings.Save(modEntry);
         }
 
         private static bool Unload(ModEntry _)
