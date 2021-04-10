@@ -70,6 +70,8 @@
   <ItemGroup>
     <Compile Include="AbandonJobDebt.cs" />
     <Compile Include="Job_AbandonJob_Patch.cs" />
+    <Compile Include="Job_GetBonusPaymentForTheJob_Patch.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Task_UpdateTaskState_Patch.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
