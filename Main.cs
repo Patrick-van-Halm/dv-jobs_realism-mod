@@ -16,6 +16,7 @@ namespace DVJobsRealism
     public class Main
     {
         public static ModEntry mod;
+        public static Settings settings;
         private static Harmony harmony;
         internal static bool enabled;
 
@@ -23,10 +24,27 @@ namespace DVJobsRealism
         {
             harmony = new Harmony(entry.Info.Id);
             mod = entry;
+
+            try { settings = Settings.Load<Settings>(mod); } catch { }
+            
             mod.OnToggle = OnToggle;
+            mod.OnGUI = OnGUI;
+            mod.OnSaveGUI = OnSaveGUI;
+#if DEBUG
             mod.OnUnload = Unload;
+#endif
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             return true;
+        }
+
+        static void OnGUI(UnityModManager.ModEntry modEntry)
+        {
+            settings.Draw(modEntry);
+        }
+
+        static void OnSaveGUI(UnityModManager.ModEntry modEntry)
+        {
+            settings.Save(modEntry);
         }
 
         private static bool Unload(ModEntry _)
