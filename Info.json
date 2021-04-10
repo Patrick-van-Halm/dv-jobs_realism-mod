@@ -2,7 +2,7 @@
   "Id": "DVJobsRealism",
   "DisplayName": "Derail Valley Job Realism",
   "Author": "Patrick van Halm",
-  "Version": "1.1.0"
+  "Version": "1.1.0",
   "AssemblyName": "DVJobsRealism.dll",
   "EntryMethod": "DVJobsRealism.Main.Load",
   "HomePage": "https://www.nexusmods.com/derailvalley/mods/295",
