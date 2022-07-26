@@ -10,7 +10,7 @@ namespace DVJobsRealism
     {
         private static void Postfix(ref float __result)
         {
-            if (!Main.enabled && Main.settings.bonusPaymentEnabled)
+            if (!Main.enabled || Main.settings.bonusPaymentEnabled)
                 return;
 
             __result = 0;
